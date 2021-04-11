@@ -21,16 +21,21 @@ body {
   background-color: rgb(211, 226, 235);
 }
 
+html body.container {
+  max-width: 1920px;
+}
+
 .card {
   background-color: white;
   box-shadow: 5px 5px 5px #888888;
   border-radius: 8px;
   margin: 0.5rem;
+  height: auto;
 }
+
 %shared-row-setting {
   display: flex;
   justify-content: space-around;
-  width: 100%;
 }
 
 .row1 {
@@ -45,33 +50,13 @@ body {
   @extend %shared-row-setting;
 }
 
-.type1 {
-  width: 19%;
-  height: auto;
-}
-
-.type2 {
-  width: 9%;
-  height: auto;
-}
-
-.type3 {
-  width: 18%;
-  height: auto;
-}
-
-.type4 {
-  width: 37%;
-  height: 400px;
-}
 .tag1 {
   background-color: themes.$tag1-color;
   color: white;
-  padding: 3px 12px;
+  padding: 1px 12px;
   border-radius: 5px;
 }
 .bt-blue {
-  font-size: 0.8rem;
   color: white;
   background-color: themes.$btn-blue-color;
   border: 1px;
@@ -87,9 +72,10 @@ body {
   position: relative;
   padding: 0;
   .card1_pic {
+    width: 100%;
     background-image: url(../img/bg-2.png);
     @extend %background-image-setting;
-    min-height: 210px;
+    min-height: 200px;
     position: relative;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -106,6 +92,7 @@ body {
   .card1_des {
     position: relative;
     padding: 15px;
+    min-height: 60px;
     > h5 {
       font-size: 18px;
       padding-left: 5px;
@@ -117,8 +104,8 @@ body {
     > i {
       color: lightgrey;
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 40px;
+      right: 30px;
     }
   }
 }
@@ -127,6 +114,7 @@ body {
   background-image: url(../img/bg-2.png);
   @extend %background-image-setting;
   position: relative;
+  min-height: 300px;
   span {
     position: absolute;
     top: 30px;
@@ -142,16 +130,13 @@ body {
     color: white;
     font-size: 1rem;
     font-weight: 400;
-    position: absolute;
-    bottom: 65px;
-    left: 45px;
+    margin-top: 200px;
+    margin-left: 20px;
   }
   p {
     color: white;
-    color: white;
-    position: absolute;
-    bottom: 35px;
-    left: 45px;
+    margin-top: -10px;
+    margin-left: 20px;
   }
   i {
     color: white;
@@ -166,13 +151,15 @@ body {
   @extend %background-image-setting;
   background-position: -30px 0;
   position: relative;
-
+  min-height: 300px;
   span {
     position: absolute;
     top: 80px;
-    left: 60px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   h3 {
+    font-size: 23px;
     color: white;
     font-weight: 350;
     position: absolute;
@@ -183,22 +170,32 @@ body {
   p {
     color: white;
     text-align: center;
-    margin-top: 200px;
+    margin-top: 180px;
   }
   button {
     position: absolute;
-    bottom: 0;
     width: 100%;
+    bottom: 0;
+    left: 0;
+    font-size: 0.8rem;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
   }
 }
 /* card7 */
+%btn-blue-setting {
+  border-radius: 18px;
+  font-size: 12px;
+  padding: 8px 20px;
+}
+
 .card7 {
   position: relative;
+  padding: 0;
   .card7_pic {
     background-image: url(../img/bg-3.png);
     @extend %background-image-setting;
+    margin: 0;
     width: 100%;
     min-height: 180px;
     border-top-left-radius: 8px;
@@ -212,7 +209,6 @@ body {
   }
   .card7_des_cover {
     position: absolute;
-    border-radius: 8px;
     top: 180px;
     width: 100%;
     bottom: 0;
@@ -222,11 +218,11 @@ body {
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 1)
     );
+    border-radius: 8px;
   }
   .card7_des {
     position: relative;
     width: 100%;
-    height: auto;
     h5 {
       font-size: 18px;
       font-weight: 450;
@@ -236,7 +232,7 @@ body {
     }
     p {
       z-index: 1;
-      font-size: 14px;
+      font-size: 12px;
       margin-top: 40px;
       padding: 10px 22px;
       line-height: 22px;
@@ -244,12 +240,100 @@ body {
     button {
       z-index: 3;
       position: absolute;
-      top: 140px;
+      bottom: 30px;
       left: 50%;
       transform: translateX(-50%);
-      border-radius: 18px;
-      font-size: 12px;
-      padding: 8px 20px;
+      @extend %btn-blue-setting;
+    }
+  }
+}
+
+// card8
+.card8 {
+  background-image: url(../img/bg-2.png);
+  @extend %background-image-setting;
+  min-height: 300px;
+  position: relative;
+  span {
+    background-color: white;
+    color: black;
+    width: 58px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  p {
+    color: themes.$card8__green;
+    position: absolute;
+    left: 30px;
+    bottom: 48px;
+  }
+  .line {
+    height: 45px;
+    width: 3px;
+    background-color: themes.$card8__green;
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+  }
+  h3 {
+    color: white;
+    font-size: 28px;
+    font-weight: 400;
+    position: absolute;
+    bottom: 25px;
+    left: 30px;
+  }
+  button {
+    @extend %btn-blue-setting;
+    width: 100px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+// card13
+.card13 {
+  background-image: url(../img/bg-6.png);
+  @extend %background-image-setting;
+  min-height: 360px;
+  position: relative;
+  img {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+  .bottom-container {
+    background-color: white;
+    border-radius: 8px;
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88%;
+    padding: 20px;
+    .star {
+      color: themes.$star;
+      padding: 1px;
+    }
+    h3 {
+      font-size: 22px;
+      font-weight: 400;
+      padding-top: 8px;
+    }
+    p {
+      color: grey;
+    }
+    strong {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .arrow {
+      color: themes.$btn-blue-color;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
     }
   }
 }
