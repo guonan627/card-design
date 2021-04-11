@@ -174,7 +174,7 @@ body {
   }
   h3 {
     color: white;
-    font-weight: 380;
+    font-weight: 350;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -182,9 +182,8 @@ body {
   }
   p {
     color: white;
-    position: absolute;
-    top: 65%;
-    left: 25%;
+    text-align: center;
+    margin-top: 200px;
   }
   button {
     position: absolute;
@@ -216,7 +215,7 @@ body {
     border-radius: 8px;
     top: 180px;
     width: 100%;
-    height: 220px;
+    bottom: 0;
     z-index: 2;
     background-image: linear-gradient(
       to bottom,
@@ -238,9 +237,8 @@ body {
     p {
       z-index: 1;
       font-size: 14px;
-      padding: 0 22px;
-      position: absolute;
-      top: 50px;
+      margin-top: 40px;
+      padding: 10px 22px;
       line-height: 22px;
     }
     button {
